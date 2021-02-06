@@ -12,6 +12,13 @@
 
 <script>
 export default {
+  data () {
+    orders: [
+      {
+        'order_number':'123'
+      }
+    ]
+  }
 }
 </script>
 
