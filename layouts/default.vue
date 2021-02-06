@@ -71,27 +71,27 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
+          icon: 'mdi-home',
+          title: 'Home',
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Customer',
+          icon: 'mdi-account-box-multiple-outline',
+          title: 'Customers',
           to: '/customers'
         },
         {
-          icon: 'mdi-apps',
+          icon: 'mdi-cart',
           title: 'Orders',
           to: '/orders'
         },
         {
-          icon: 'mdi-apps',
+          icon: 'mdi-go-kart-track',
           title: 'Routes',
           to: '/routes'
         },
         {
-          icon: 'mdi-apps',
+          icon: 'mdi-bus-multiple',
           title: 'Drivers',
           to: '/drivers'
         },
