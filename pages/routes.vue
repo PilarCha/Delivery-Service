@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <h1>Routes page</h1>
+    <h1 class="mb-4">Routes page</h1>
     <section>
       <v-card>
         <v-card-title> Hello, world </v-card-title>
