@@ -2,9 +2,22 @@
   <div class="">
     <h1 class = "mb-4">Orders Page</h1>
     <section>
-      <v-card :to="`/orders/${order.order_number}`" :key="order.order_number" v-for="order in orders">
-        <v-card-title> Hello, world </v-card-title>
-        <v-card-subtitle>Subtitle</v-card-subtitle>
+      <v-card
+        class="mb-4"
+        :to="`/orders/${order.order_number}`"
+        :key="order.order_number" v-for="order in orders"
+      >
+        <v-card-title>
+          {{ order.order_number }}
+        </v-card-title>
+
+        <v-card-subtitle
+          class="mb-2"
+          style="display:inline"
+          :key="order.items.index"
+          v-for="item in order.items">{{ item }}
+        </v-card-subtitle>
+
       </v-card>
     </section>
   </div>

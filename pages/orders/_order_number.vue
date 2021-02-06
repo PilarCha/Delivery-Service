@@ -3,6 +3,9 @@
     <h1>Order: {{ orderNumber }}</h1>
     <section>
       <h2>Details</h2>
+      <ul>
+
+      </ul>
     </section>
   </div>
 </template>
