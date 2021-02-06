@@ -3,7 +3,7 @@
     <h1>Drivers</h1>
     <section>
       <v-card>
-        <v-cart-title> Hello, world </v-cart-title>
+        <v-card-title> Hello, world </v-card-title>
         <v-card-subtitle>Subtitle</v-card-subtitle>
       </v-card>
     </section>
