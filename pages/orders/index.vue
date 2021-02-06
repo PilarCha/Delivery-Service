@@ -11,13 +11,14 @@
           {{ order.order_number }}
         </v-card-title>
 
-        <v-card-subtitle
-          class="mb-2"
-          style="display:inline"
+        <v-btn
+          color="primary"
+          class="mr-2 mb-2 ml-2"
           :key="order.items.index"
-          v-for="item in order.items">{{ item }}
-        </v-card-subtitle>
-
+          v-for="item in order.items"
+        >
+          {{ item }}
+        </v-btn>
       </v-card>
     </section>
   </div>
