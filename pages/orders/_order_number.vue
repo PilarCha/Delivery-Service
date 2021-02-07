@@ -1,7 +1,16 @@
 <template>
   <div class="">
+    <v-alert
+      v-if= "cancelled"
+      text
+      prominent
+      type="error"
+    >
+      This order was Cancelled
+    </v-alert>
+
     <h1>Order: {{ orderNumber }}</h1>
-    <section>
+    <section v-if="!cancelled">
       <v-row
         class="mt-2 ml-3"
       >
@@ -34,13 +43,20 @@
         <v-divider></v-divider>
 
         <v-card-actions>
-          <v-spacer></v-spacer>
           <v-btn
             color="primary"
             text
-            @click="dialog = false"
+            @click="cancelOrder()"
           >
             I accept
+          </v-btn>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="error"
+            text
+            @click="dialog = false"
+          >
+            Nevermind
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -54,6 +70,13 @@ export default {
   data () {
     return {
       dialog: false,
+      cancelled:false
+    }
+  },
+  methods: {
+    cancelOrder () {
+      this.dialog=false;
+      this.cancelled = true;
     }
   },
   computed: {
