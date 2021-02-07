@@ -5,6 +5,7 @@
       <v-card
         class="mb-4"
         :to="`/orders/${order.order_number}`"
+        specificOrder="`orders${order.order_number}`"
         :key="order.order_number" v-for="order in orders"
       >
         <v-card-title>
