@@ -4,8 +4,8 @@
     <section>
       <v-card
         :to="`/customer/${customer.customer_id}`"
-        :key="idx"
-        v-for="(customer,idx) in data"
+        :key="index"
+        v-for="(customer,index) in customers"
       >
         <v-card-title> {{ customer.name }} </v-card-title>
         <v-card-subtitle>{{ customer.name }}</v-card-subtitle>
@@ -19,7 +19,7 @@
 export default {
 
   computed: {
-    getCustomers () {
+    customers () {
       return this.$store.state.customers.data
     }
   }
