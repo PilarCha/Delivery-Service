@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <h1 class = "mb-4">Customer ID: {{ customerId }}</h1>
+    <h1 class = "mb-4">Customer ID: {{ customerId.name }}</h1>
     <section>
       <v-card
         class = "mb-2"
@@ -16,7 +16,8 @@
 export default {
   computed: {
     customerId () {
-      return this.$route.params.customer_id;
+      let custId = this.$route.params.customer_id
+      return this.$store.getters.getCustomer
     }
   }
 }

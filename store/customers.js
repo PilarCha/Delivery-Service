@@ -14,3 +14,9 @@ export const state = () => ({
     },
   ]
 })
+
+export const getters = {
+  getCustomer: state => {
+    return state.data.filter(customer => customer.customer_id ==1)
+  }
+}
