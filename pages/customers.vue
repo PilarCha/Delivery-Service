@@ -11,9 +11,15 @@
 </template>
 
 <script>
+import {mapState} from "vuex"
 export default {
+
+  computed: mapState(["customers"]),
+  
 }
 </script>
+
+
 
 <style lang="css" scoped>
 </style>
