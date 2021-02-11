@@ -16,7 +16,7 @@ export const state = () => ({
 })
 
 export const getters = {
-  getCustomer: state => {
-    return state.data.filter(customer => customer.customer_id ==1)
+  getCustomerById: (state,getters) => (custId) => {
+    return state.data.find(customer => customer.customer_id == custId)
   }
 }

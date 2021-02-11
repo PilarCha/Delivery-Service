@@ -13,11 +13,13 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   computed: {
     customerId () {
       let custId = this.$route.params.customer_id
-      return this.$store.getters.getCustomer
+      return this.$store.getters.getCustomerById(custId)
     }
   }
 }
