@@ -14,9 +14,3 @@ export const state = () => ({
     },
   ]
 })
-
-export const getters = {
-  getCustomerById: (state,getters) => (custId) => {
-    return state.data.find(customer => customer.customer_id == custId)
-  }
-}
