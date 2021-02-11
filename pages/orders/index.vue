@@ -27,11 +27,13 @@
 
 <script>
 export default {
+
   computed: {
     orders () {
       return this.$store.state.orders.data
     }
   }
+
 }
 </script>
 

@@ -4,12 +4,11 @@
     <section>
       <v-card
         class = "mb-2"
-        :to="`/customer/${customer.customer_id}`"
+        :to="`/customers/${customer.customer_id}`"
         :key="index"
         v-for="(customer,index) in customers"
       >
         <v-card-title> {{ customer.name }} </v-card-title>
-        <v-card-subtitle>{{ customer.name }}</v-card-subtitle>
       </v-card>
     </section>
   </div>

@@ -37,7 +37,7 @@
         </v-card-title>
 
         <v-card-text class="mt-2">
-          Caneling the order with result in the order being changed from pending to Cancelled.
+          Canceling the order with result in the order being changed from pending to Cancelled.
         </v-card-text>
 
         <v-divider></v-divider>
