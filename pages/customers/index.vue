@@ -3,6 +3,7 @@
     <h1 class = "mb-4">Customers</h1>
     <section>
       <v-card
+        class = "mb-2"
         :to="`/customer/${customer.customer_id}`"
         :key="index"
         v-for="(customer,index) in customers"
