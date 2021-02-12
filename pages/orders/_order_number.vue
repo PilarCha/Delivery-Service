@@ -9,7 +9,6 @@
       This order was Cancelled
     </v-alert>
 
-    {{orderNumber}}
     <v-card
       elevation="17"
       outlined
@@ -17,7 +16,8 @@
       class = "pa-2"
     >
 
-      <v-card-title><h2>Order: {{ orderNumber.order_id }}</h2></v-card-title>
+      <v-card-title class = "mb-2"><h2>Order: {{ orderNumber.order_id }}</h2></v-card-title>
+      <v-card-subtitle> Status: {{ orderNumber.order_status }} </v-card-subtitle>
       <v-card-text>
         Items:
         <ul v-for = "item in orderNumber.items">
