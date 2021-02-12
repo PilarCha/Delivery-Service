@@ -4,12 +4,12 @@
     <section>
       <v-card
         class="mb-4"
-        :to="`/orders/${order.order_number}`"
-        specificOrder="`orders${order.order_number}`"
-        :key="order.order_number" v-for="order in orders"
+        :to="`/orders/${order.order_id}`"
+        specificOrder="`orders${order.order_id}`"
+        :key="order.order_id" v-for="order in orders"
       >
         <v-card-title>
-          {{ order.order_number }}
+          {{ order.order_id }}
         </v-card-title>
 
         <v-btn

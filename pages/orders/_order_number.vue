@@ -9,23 +9,41 @@
       This order was Cancelled
     </v-alert>
 
-    <h1>Order: {{ orderNumber }}</h1>
-    <section v-if="!cancelled">
-      <v-row
-        class="mt-2 ml-3"
-      >
-        <v-btn
-          color="primary"
-        > Deliver
-        </v-btn>
-        <v-btn
-          class="ml-3"
-          color="error"
-          @click="dialog = true"
-        > Cancel Order
-        </v-btn>
-      </v-row>
-    </section>
+    {{orderNumber}}
+    <v-card
+      elevation="17"
+      outlined
+      shaped
+      class = "pa-2"
+    >
+
+      <v-card-title><h2>Order: {{ orderNumber.order_id }}</h2></v-card-title>
+      <v-card-text>
+        Items:
+        <ul v-for = "item in orderNumber.items">
+          <li> {{ item }} </li>
+        </ul>
+
+      </v-card-text>
+      <section v-if="!cancelled">
+        <v-row
+          class="mt-2 ml-3"
+        >
+          <v-btn
+            color="primary"
+          > Deliver
+          </v-btn>
+          <v-btn
+            class="ml-3 mb-3"
+            color="error"
+            @click="dialog = true"
+          > Cancel Order
+          </v-btn>
+        </v-row>
+      </section>
+    </v-card>
+
+
     <v-dialog
       v-model="dialog"
       width="500"
@@ -81,7 +99,8 @@ export default {
   },
   computed: {
     orderNumber() {
-      return this.$route.params.order_number;
+      let ordId = this.$route.params.order_number;
+      return this.$store.state.orders.data.find(order => order.order_id === ordId);
     }
   },
   components: {
