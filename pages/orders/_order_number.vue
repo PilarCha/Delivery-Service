@@ -31,6 +31,7 @@
         >
           <v-btn
             color="primary"
+            @click="deliverOrder()"
           > Deliver
           </v-btn>
           <v-btn
@@ -95,6 +96,9 @@ export default {
     cancelOrder () {
       this.dialog=false;
       this.cancelled = true;
+    },
+    deliverOrder () {
+
     }
   },
   computed: {
