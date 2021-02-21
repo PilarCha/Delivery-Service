@@ -1,14 +1,13 @@
 <template>
   <div class="">
-    <v-alert
+    <!-- cancel alert -->
+    <LazyAlert
       v-if= "cancelled"
-      text
-      prominent
-      type="error"
-    >
-      This order was Cancelled
-    </v-alert>
+    />
 
+    <LazySuccess v-if="delivered"/>
+
+    <!-- MAIN -->
     <v-card
       elevation="17"
       outlined
@@ -25,7 +24,7 @@
         </ul>
 
       </v-card-text>
-      <section v-if="!cancelled">
+      <section v-if="!cancelled && !delivered">
         <v-row
           class="mt-2 ml-3"
         >
@@ -44,7 +43,7 @@
       </section>
     </v-card>
 
-
+    <!-- agree or cancel order -->
     <v-dialog
       v-model="dialog"
       width="500"
@@ -80,6 +79,8 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
+
+
   </div>
 </template>
 
@@ -89,7 +90,8 @@ export default {
   data () {
     return {
       dialog: false,
-      cancelled:false
+      cancelled:false,
+      delivered:false
     }
   },
   methods: {
@@ -98,7 +100,7 @@ export default {
       this.cancelled = true;
     },
     deliverOrder () {
-
+      this.delivered = true;
     }
   },
   computed: {
