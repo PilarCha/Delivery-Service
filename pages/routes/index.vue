@@ -31,7 +31,7 @@
         <!-- Steps -->
         <v-stepper-items>
           <v-stepper-content step="1">
-            <v-select :items="driverOptions"/>
+            <v-select :items="driverOptions" placeholder="Select Driver"/>
 
             <v-btn
               color="primary"
@@ -43,11 +43,7 @@
           </v-stepper-content>
 
           <v-stepper-content step="2">
-            <v-card
-              class="mb-12"
-              color="grey lighten-1"
-              height="200px"
-            ></v-card>
+            <v-select :items="orderOptions" placeholder="Select Order"/>
 
             <v-btn
               color="primary"
@@ -107,6 +103,17 @@ export default {
         return {
           text:driver.name,
           value:driver.driver_id
+        }
+      })
+    },
+    orders () {
+      return this.$store.state.orders.data
+    },
+    orderOptions() {
+      return this.orders.map(( order ) => {
+        return {
+          text: order.order_id,
+          value: order.order_id
         }
       })
     }
