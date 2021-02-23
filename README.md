@@ -1,4 +1,12 @@
-# funfun
+# Nuxt Delivery System Management
+
+Dummy Data can be found in the State Folder. 
+
+Vuex manages the State Data.
+
+FrontEnd is created using Vuetify.
+
+
 
 ## Build Setup
 
@@ -17,4 +25,3 @@ $ npm run start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
