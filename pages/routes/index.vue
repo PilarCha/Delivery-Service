@@ -31,11 +31,7 @@
         <!-- Steps -->
         <v-stepper-items>
           <v-stepper-content step="1">
-            <v-card
-              class="mb-12"
-              color="grey lighten-1"
-              height="200px"
-            ></v-card>
+            <v-select :items="driverOptions"/>
 
             <v-btn
               color="primary"
@@ -97,6 +93,19 @@ export default {
   data ()  {
     return {
       steps: 1,
+    }
+  },
+  computed: {
+    drivers () {
+      return this.$store.state.drivers.data
+    },
+    driverOptions() {
+      return this.drivers.map((driver) => {
+        return {
+          text:driver.name,
+          value:driver.driver_id
+        }
+      })
     }
   }
 }
