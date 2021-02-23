@@ -40,9 +40,6 @@
               Continue
             </v-btn>
 
-            <v-btn text>
-              Cancel
-            </v-btn>
           </v-stepper-content>
 
           <v-stepper-content step="2">
@@ -59,8 +56,11 @@
               Continue
             </v-btn>
 
-            <v-btn text>
-              Cancel
+            <v-btn
+              color="warning"
+              @click="steps = 1"
+            >
+              Select Driver
             </v-btn>
           </v-stepper-content>
 
@@ -78,8 +78,11 @@
               Continue
             </v-btn>
 
-            <v-btn text>
-              Cancel
+            <v-btn
+              color="warning"
+              @click="steps = 2"
+            >
+              Select Orders
             </v-btn>
           </v-stepper-content>
         </v-stepper-items>
