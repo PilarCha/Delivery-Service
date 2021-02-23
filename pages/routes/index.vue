@@ -3,12 +3,13 @@
     <h1 class="mb-4">Routes page</h1>
     <section>
       <v-stepper v-model="steps">
+        <!-- Header -->
         <v-stepper-header>
           <v-stepper-step
             :complete="steps > 1"
             step="1"
           >
-            Name of step 1
+            Select Driver
           </v-stepper-step>
 
           <v-divider></v-divider>
@@ -17,16 +18,17 @@
             :complete="steps > 2"
             step="2"
           >
-            Name of step 2
+            Select Orders
           </v-stepper-step>
 
           <v-divider></v-divider>
 
           <v-stepper-step step="3">
-            Name of step 3
+            Confirm
           </v-stepper-step>
         </v-stepper-header>
 
+        <!-- Steps -->
         <v-stepper-items>
           <v-stepper-content step="1">
             <v-card
