@@ -12,5 +12,17 @@ export const state = () => ({
       driver_id:3,
       name:'Takeda from Initial D'
     },
+    {
+      driver_id: 4,
+      name:'Bob the quickest'
+    },
+    {
+      driver_id: 5,
+      name: 'TurtleMan'
+    },
+    {
+      driver_id:6,
+      name:'Jim'
+    },
   ]
 })
