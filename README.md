@@ -1,7 +1,12 @@
-# Manage Delivery System
+# Nuxt Delivery System Management
 
-Dummy Data can be found in the State Folder. Vuex manages the State Data. 
+Dummy Data can be found in the State Folder. 
+
+Vuex manages the State Data.
+
 FrontEnd is created using Vuetify.
+
+
 
 ## Build Setup
 
