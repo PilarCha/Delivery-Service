@@ -48,7 +48,7 @@
 
           <v-stepper-content step="2">
             <v-select
-              v-model="selectedOrder"
+              v-model="selectedOrders"
               :items="orderOptions"
               placeholder="Select Order"
               multiple
@@ -70,17 +70,16 @@
           </v-stepper-content>
 
           <v-stepper-content step="3">
-            <v-card
-              class="mb-12"
-              color="grey lighten-1"
-              height="200px"
-            ></v-card>
+            <h2> {{ selectedDriver }}</h2>
+            <ul>
+              <li v-for="order in selectedOrders"> {{ order }}</li>
+            </ul>
 
             <v-btn
               color="primary"
               @click="steps = 1"
             >
-              Continue
+              Confirm
             </v-btn>
 
             <v-btn
@@ -101,7 +100,7 @@ export default {
   data ()  {
     return {
       selectedDriver:null,
-      selectedOrder: null,
+      selectedOrders: null,
       steps: 1,
     }
   },
