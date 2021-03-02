@@ -31,7 +31,11 @@
         <!-- Steps -->
         <v-stepper-items>
           <v-stepper-content step="1">
-            <v-select :items="driverOptions" placeholder="Select Driver"/>
+            <v-select
+              v-model = "selectedDriver"
+              :items="driverOptions"
+              placeholder="Select Driver"
+            />
 
             <v-btn
               color="primary"
@@ -43,7 +47,12 @@
           </v-stepper-content>
 
           <v-stepper-content step="2">
-            <v-select :items="orderOptions" placeholder="Select Order"/>
+            <v-select
+              v-model="selectedOrder"
+              :items="orderOptions"
+              placeholder="Select Order"
+              multiple
+            />
 
             <v-btn
               color="primary"
@@ -91,6 +100,8 @@
 export default {
   data ()  {
     return {
+      selectedDriver:null,
+      selectedOrder: null,
       steps: 1,
     }
   },
