@@ -77,7 +77,7 @@
 
             <v-btn
               color="primary"
-              @click="steps = 1"
+              @click="confirmRoutes(), steps = 1"
             >
               Confirm
             </v-btn>
@@ -92,6 +92,26 @@
         </v-stepper-items>
       </v-stepper>
     </section>
+    <v-snackbar
+      v-model="snackbar"
+      :timeout="timeout"
+      color="success"
+      outlined
+    >
+      {{ text }}
+
+      <template v-slot:action="{ attrs }">
+        <v-btn
+          color="red"
+          outlined
+          text
+          v-bind="attrs"
+          @click="snackbar = false"
+        >
+          Close
+        </v-btn>
+      </template>
+    </v-snackbar>
   </div>
 </template>
 
@@ -99,9 +119,18 @@
 export default {
   data ()  {
     return {
+      confirmed: false,
       selectedDriver:null,
       selectedOrders: null,
       steps: 1,
+      snackbar: false,
+      text: 'Driver has been assigned routes',
+      timeout:2000
+    }
+  },
+  methods: {
+    confirmRoutes() {
+      this.snackbar = true;
     }
   },
   computed: {
@@ -126,7 +155,7 @@ export default {
           value: order.order_id
         }
       })
-    }
+    },
   }
 }
 </script>
